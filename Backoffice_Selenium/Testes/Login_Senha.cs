@@ -1,49 +1,42 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using System.Threading;
+﻿using OpenQA.Selenium;
+using Xunit;
 
 namespace Backoffice_Selenium
 {
-	[Parallelizable]
 
-	class Login_Senha
+	public class Login_Senha
 	{
 		public IWebDriver Driver { get; set; }
 		public Login_Senha()
 		{
 		}
 
-		[SetUp]
-		public void Initialize()
+		[Fact(DisplayName = "Vazia")]
+		public void Vazia()
 		{
 			Driver = Acoes.InicializarDriver();
-		}
-		[Test]
-		public void Login_SenhaVazia()
-		{
 			var login = new Login(Driver);
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, "", Driver);
-			Assert.AreEqual("O campo Senha é obrigatório.", login.lbl_ErroSenha.Text);
+			Assert.Equal("O campo Senha é obrigatório.", login.lbl_ErroSenha.Text);
+			Driver.Quit();
 		}
-		[Test]
-		public void Login_SenhaInvalida()
+		[Fact(DisplayName = "Invalida")]
+		public void Invalida()
 		{
+			Driver = Acoes.InicializarDriver();
 			var login = new Login(Driver);
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, Config.Credenciais.Senha.Invalida, Driver);
-			Assert.AreEqual("Usuário não autorizado.", login.lbl_ErrorSum.Text);
+			Assert.Equal("Usuário não autorizado.", login.lbl_ErrorSum.Text);
+			Driver.Quit();
 		}
-		[Test]
-		public void Login_SenhaValida()
+		[Fact(DisplayName = "Valida")]
+		public void Valida()
 		{
+			Driver = Acoes.InicializarDriver();
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, Config.Credenciais.Senha.Valida, Driver);
 			var barra = new BarraTopo(Driver);
 			Assert.True(barra.act_Usuario.Displayed);
 			Acoes.Logoff(Driver);
-		}
-
-		[TearDown]
-		public void CleanUp()
-		{
 			Driver.Quit();
 		}
 	}
