@@ -117,3 +117,4 @@ C:\Users\mathe\Desktop\Studiest\Backoffice - Selenium\Backoffice_Selenium\Backof
 C:\Users\mathe\Desktop\Studiest\Backoffice - Selenium\Backoffice_Selenium\Backoffice_Selenium\bin\Debug\xunit.execution.desktop.xml
 C:\Users\mathe\Desktop\Studiest\Backoffice - Selenium\Backoffice_Selenium\Backoffice_Selenium\obj\Debug\Backoffice_Selenium.exe.config
 C:\Users\mathe\Desktop\Studiest\Backoffice - Selenium\Backoffice_Selenium\Backoffice_Selenium\obj\Debug\Backoffice_Selenium.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Desktop\Studiest\Backoffice - Selenium\Backoffice_Selenium\Backoffice_Selenium\obj\Debug\Backoffice_Selenium.csprojResolveAssemblyReference.cache

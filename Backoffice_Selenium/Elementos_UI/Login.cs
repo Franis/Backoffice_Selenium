@@ -10,23 +10,17 @@ namespace Backoffice_Selenium
             PageFactory.InitElements(driver, this);
         }
 
-		[FindsBy(How = How.Id, Using = "UserName")]
-		public IWebElement txt_Usuario { get; set; }
+		[FindsBy(How = How.Id, Using = "txtUsuario")]
+		public IWebElement txtUsuario { get; set; }
 
-		[FindsBy(How = How.Id, Using = "Password")]
-        public IWebElement txt_Senha { get; set; }
+		[FindsBy(How = How.Id, Using = "txtSenha")]
+        public IWebElement txtSenha { get; set; }
 
         [FindsBy(How = How.ClassName, Using = "btn")]
-        public IWebElement btn_Entrar { get; set; }
+        public IWebElement btnEntrar { get; set; }
 
-        [FindsBy(How = How.Id, Using = "UserName-error")]
-        public IWebElement lbl_ErroUsuario { get; set; }
-
-        [FindsBy(How = How.Id, Using = "Password-error")]
-        public IWebElement lbl_ErroSenha { get; set; }
-
-        [FindsBy(How = How.Id, Using = "errorsummary")]
-        public IWebElement lbl_ErrorSum { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "div.alert")]
+        public IWebElement lblErrorSum { get; set; }
         
     }
 }

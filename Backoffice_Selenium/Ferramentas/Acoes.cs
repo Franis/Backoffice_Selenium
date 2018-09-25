@@ -18,17 +18,18 @@ namespace Backoffice_Selenium
         {
             var login = new Login(driver);
 
-            login.txt_Usuario.Clear();
-            login.txt_Usuario.SendKeys(Usuario);
-            login.txt_Senha.Clear();
-            login.txt_Senha.SendKeys(Senha);
-            login.btn_Entrar.Click();
+            login.txtUsuario.Clear();
+            login.txtUsuario.SendKeys(Usuario);
+            login.txtSenha.Clear();
+            login.txtSenha.SendKeys(Senha);
+            login.btnEntrar.Click();
         }
         public static void Logoff(IWebDriver driver)
         {
             var barra = new BarraTopo(driver);
-            barra.act_Usuario.Click();
-            barra.btn_Logout.Click();
+            barra.actMenuUsuario.Click();
+            barra.btnSair.Click();
         }
+		public static void 
     }
 }

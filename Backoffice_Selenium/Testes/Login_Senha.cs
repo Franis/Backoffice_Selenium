@@ -17,7 +17,7 @@ namespace Backoffice_Selenium
 			Driver = Acoes.InicializarDriver();
 			var login = new Login(Driver);
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, "", Driver);
-			Assert.Equal("O campo Senha é obrigatório.", login.lbl_ErroSenha.Text);
+			Assert.True(login.lblErrorSum.Displayed);
 			Driver.Quit();
 		}
 		[Fact(DisplayName = "Invalida")]
@@ -26,7 +26,7 @@ namespace Backoffice_Selenium
 			Driver = Acoes.InicializarDriver();
 			var login = new Login(Driver);
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, Config.Credenciais.Senha.Invalida, Driver);
-			Assert.Equal("Usuário não autorizado.", login.lbl_ErrorSum.Text);
+			Assert.True(login.lblErrorSum.Displayed);
 			Driver.Quit();
 		}
 		[Fact(DisplayName = "Valida")]
@@ -35,7 +35,7 @@ namespace Backoffice_Selenium
 			Driver = Acoes.InicializarDriver();
 			Acoes.PreencherLogin(Config.Credenciais.Usuario.Valido, Config.Credenciais.Senha.Valida, Driver);
 			var barra = new BarraTopo(Driver);
-			Assert.True(barra.act_Usuario.Displayed);
+			Assert.True(barra.actMenuUsuario.Displayed);
 			Acoes.Logoff(Driver);
 			Driver.Quit();
 		}

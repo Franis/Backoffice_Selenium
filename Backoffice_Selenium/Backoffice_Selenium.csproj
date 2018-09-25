@@ -91,6 +91,7 @@
     <Compile Include="Ferramentas\Config.cs" />
     <Compile Include="Elementos_UI\Login.cs" />
     <Compile Include="Elementos_UI\BarraTopo.cs" />
+    <Compile Include="Elementos_UI\ModEncerrarSessão.cs" />
     <Compile Include="Testes\Login_Senha.cs" />
     <Compile Include="Testes\Login_Usuario.cs" />
     <Compile Include="Program.cs" />

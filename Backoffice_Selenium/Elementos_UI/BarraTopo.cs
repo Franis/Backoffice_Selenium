@@ -11,9 +11,9 @@ namespace Backoffice_Selenium
         }
 
         [FindsBy(How = How.CssSelector, Using = "div.nav>div>a")]
-        public IWebElement act_Usuario { get; set; }
+        public IWebElement actMenuUsuario { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "form#frmLogout>a")]
-        public IWebElement btn_Logout { get; set; }
+        public IWebElement btnSair { get; set; }
     }
 }
